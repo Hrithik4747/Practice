@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+
+
+bool age(int n){
+    if(n < 18){
+        return 1;
+    }else
+    return 0;
+}
+int main(){
+    cout<<age(10);
+}
