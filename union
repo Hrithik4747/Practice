@@ -1,0 +1,24 @@
+Given two arrays arr1[] and arr2[], the task is to find the number of elements in the union between these two arrays.
+
+
+class Solution {
+  public:
+    // Function to return the count of number of elements in union of two arrays.
+    int doUnion(vector<int> arr1, vector<int> arr2) {
+        
+        set<int> ans;
+        for( int i = 0 ; i < arr1.size() ; i++){
+            ans.insert(arr1[i]);
+        }
+        for( int i = 0 ; i < arr2.size() ; i++){
+            ans.insert(arr2[i]);
+        }
+         int count =0;
+         for( int i = 0 ; i < ans.size() ; i++){
+             count++;
+         }
+         return { count };
+         
+        
+    }
+};
