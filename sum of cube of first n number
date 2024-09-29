@@ -1,0 +1,15 @@
+Given an integer n, calculate the sum of series 13 + 23 + 33 + 43 + … till n-th term.
+
+
+
+class Solution {
+  public:
+    long long sumOfSeries(long long n) {
+        
+        
+        long long sum = (n*n*(n+1)*(n+1))/4;
+        
+        return sum;
+        
+    }
+};
