@@ -1,0 +1,55 @@
+Given an array arr[], return true if there is a triplet (a, b, c) from the array (where a, b, and c are on different indexes) that satisfies a2 + b2 = c2, otherwise return false.
+
+//using set
+
+class Solution {
+  public:
+    bool pythagoreanTriplet(vector<int>& arr) {
+        // code here
+        
+        unordered_set<int> hypo;
+        int n = arr.size();
+        
+        for( int i = 0; i < n; i++){
+            hypo.insert(arr[i]*arr[i]);
+        }
+        
+        for(int i = 0; i < n; i++){
+            int a = arr[i];
+            for(int j = i+1; j < n; j++){
+                int b = arr[j];
+                
+                if(hypo.count(a*a + b*b)) return true;
+            }
+        }
+        
+        return false;
+    }
+};
+
+//using map
+
+class Solution {
+  public:
+    bool pythagoreanTriplet(vector<int>& arr) {
+        // code here
+        
+        unordered_map<int,int> hypo;
+        int n = arr.size();
+        
+       for(auto i:arr){
+           hypo[i*i]++;
+       }
+        
+        for(int i = 0; i < n; i++){
+            int a = arr[i];
+            for(int j = i+1; j < n; j++){
+                int b = arr[j];
+                
+                if(hypo.find(a*a + b*b) != hypo.end()) return true;
+            }
+        }
+        
+        return false;
+    }
+};
